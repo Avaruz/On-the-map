@@ -8,22 +8,44 @@
 
 /* Begin PBXBuildFile section */
 		FA34997A1C56C0E300A9A0C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3499791C56C0E300A9A0C0 /* AppDelegate.swift */; };
-		FA34997C1C56C0E300A9A0C0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34997B1C56C0E300A9A0C0 /* ViewController.swift */; };
-		FA34997F1C56C0E300A9A0C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA34997D1C56C0E300A9A0C0 /* Main.storyboard */; };
 		FA3499821C56C0E300A9A0C0 /* On_the_map.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA3499801C56C0E300A9A0C0 /* On_the_map.xcdatamodeld */; };
-		FA3499841C56C0E300A9A0C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA3499831C56C0E300A9A0C0 /* Assets.xcassets */; };
 		FA3499871C56C0E300A9A0C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA3499851C56C0E300A9A0C0 /* LaunchScreen.storyboard */; };
+		FA3499DA1C5D6ED300A9A0C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA3499D91C5D6ED300A9A0C0 /* Assets.xcassets */; };
+		FA3499E81C5D6F1100A9A0C0 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3499DB1C5D6F1100A9A0C0 /* LocationViewController.swift */; };
+		FA3499E91C5D6F1100A9A0C0 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3499DC1C5D6F1100A9A0C0 /* LoginTextField.swift */; };
+		FA3499EA1C5D6F1100A9A0C0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3499DD1C5D6F1100A9A0C0 /* LoginViewController.swift */; };
+		FA3499EB1C5D6F1100A9A0C0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3499DE1C5D6F1100A9A0C0 /* MapViewController.swift */; };
+		FA3499EC1C5D6F1100A9A0C0 /* MapViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3499DF1C5D6F1100A9A0C0 /* MapViewControllerExtension.swift */; };
+		FA3499ED1C5D6F1100A9A0C0 /* PostLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3499E01C5D6F1100A9A0C0 /* PostLocationViewController.swift */; };
+		FA3499F11C5D6F1100A9A0C0 /* StudentInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3499E41C5D6F1100A9A0C0 /* StudentInformation.swift */; };
+		FA3499F21C5D6F1100A9A0C0 /* StudentLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3499E51C5D6F1100A9A0C0 /* StudentLocation.swift */; };
+		FA3499F31C5D6F1100A9A0C0 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3499E61C5D6F1100A9A0C0 /* TableViewController.swift */; };
+		FA3499F41C5D6F1100A9A0C0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3499E71C5D6F1100A9A0C0 /* User.swift */; };
+		FA3499F61C5D6F7F00A9A0C0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA3499F51C5D6F7F00A9A0C0 /* MapKit.framework */; };
+		FA3499F81C5D6FD100A9A0C0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3499F71C5D6FD100A9A0C0 /* BaseViewController.swift */; };
+		FA3499FA1C5D759000A9A0C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA3499F91C5D759000A9A0C0 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FA3499761C56C0E300A9A0C0 /* On the map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "On the map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA3499791C56C0E300A9A0C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FA34997B1C56C0E300A9A0C0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FA34997E1C56C0E300A9A0C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA3499811C56C0E300A9A0C0 /* On_the_map.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = On_the_map.xcdatamodel; sourceTree = "<group>"; };
-		FA3499831C56C0E300A9A0C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA3499861C56C0E300A9A0C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA3499881C56C0E300A9A0C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA3499D91C5D6ED300A9A0C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA3499DB1C5D6F1100A9A0C0 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		FA3499DC1C5D6F1100A9A0C0 /* LoginTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
+		FA3499DD1C5D6F1100A9A0C0 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FA3499DE1C5D6F1100A9A0C0 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		FA3499DF1C5D6F1100A9A0C0 /* MapViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewControllerExtension.swift; sourceTree = "<group>"; };
+		FA3499E01C5D6F1100A9A0C0 /* PostLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostLocationViewController.swift; sourceTree = "<group>"; };
+		FA3499E41C5D6F1100A9A0C0 /* StudentInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentInformation.swift; sourceTree = "<group>"; };
+		FA3499E51C5D6F1100A9A0C0 /* StudentLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentLocation.swift; sourceTree = "<group>"; };
+		FA3499E61C5D6F1100A9A0C0 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		FA3499E71C5D6F1100A9A0C0 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FA3499F51C5D6F7F00A9A0C0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		FA3499F71C5D6FD100A9A0C0 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		FA3499F91C5D759000A9A0C0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA3499F61C5D6F7F00A9A0C0 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +63,7 @@
 		FA34996D1C56C0E300A9A0C0 = {
 			isa = PBXGroup;
 			children = (
+				FA3499F51C5D6F7F00A9A0C0 /* MapKit.framework */,
 				FA3499781C56C0E300A9A0C0 /* On the map */,
 				FA3499771C56C0E300A9A0C0 /* Products */,
 			);
@@ -56,15 +80,41 @@
 		FA3499781C56C0E300A9A0C0 /* On the map */ = {
 			isa = PBXGroup;
 			children = (
+				FA3499D91C5D6ED300A9A0C0 /* Assets.xcassets */,
+				FA3499DC1C5D6F1100A9A0C0 /* LoginTextField.swift */,
+				FA3499C31C5D6C6600A9A0C0 /* Models */,
+				FA3499A81C5D6AE400A9A0C0 /* Controllers */,
 				FA3499791C56C0E300A9A0C0 /* AppDelegate.swift */,
-				FA34997B1C56C0E300A9A0C0 /* ViewController.swift */,
-				FA34997D1C56C0E300A9A0C0 /* Main.storyboard */,
-				FA3499831C56C0E300A9A0C0 /* Assets.xcassets */,
+				FA3499F91C5D759000A9A0C0 /* Main.storyboard */,
 				FA3499851C56C0E300A9A0C0 /* LaunchScreen.storyboard */,
 				FA3499881C56C0E300A9A0C0 /* Info.plist */,
 				FA3499801C56C0E300A9A0C0 /* On_the_map.xcdatamodeld */,
 			);
 			path = "On the map";
+			sourceTree = "<group>";
+		};
+		FA3499A81C5D6AE400A9A0C0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA3499F71C5D6FD100A9A0C0 /* BaseViewController.swift */,
+				FA3499DB1C5D6F1100A9A0C0 /* LocationViewController.swift */,
+				FA3499DD1C5D6F1100A9A0C0 /* LoginViewController.swift */,
+				FA3499DE1C5D6F1100A9A0C0 /* MapViewController.swift */,
+				FA3499DF1C5D6F1100A9A0C0 /* MapViewControllerExtension.swift */,
+				FA3499E01C5D6F1100A9A0C0 /* PostLocationViewController.swift */,
+				FA3499E61C5D6F1100A9A0C0 /* TableViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		FA3499C31C5D6C6600A9A0C0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FA3499E41C5D6F1100A9A0C0 /* StudentInformation.swift */,
+				FA3499E51C5D6F1100A9A0C0 /* StudentLocation.swift */,
+				FA3499E71C5D6F1100A9A0C0 /* User.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,6 +149,12 @@
 				TargetAttributes = {
 					FA3499751C56C0E300A9A0C0 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 8PVGQ3ZU9K;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -125,9 +181,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA3499FA1C5D759000A9A0C0 /* Main.storyboard in Resources */,
 				FA3499871C56C0E300A9A0C0 /* LaunchScreen.storyboard in Resources */,
-				FA3499841C56C0E300A9A0C0 /* Assets.xcassets in Resources */,
-				FA34997F1C56C0E300A9A0C0 /* Main.storyboard in Resources */,
+				FA3499DA1C5D6ED300A9A0C0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +194,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA34997C1C56C0E300A9A0C0 /* ViewController.swift in Sources */,
+				FA3499F81C5D6FD100A9A0C0 /* BaseViewController.swift in Sources */,
+				FA3499EC1C5D6F1100A9A0C0 /* MapViewControllerExtension.swift in Sources */,
+				FA3499E81C5D6F1100A9A0C0 /* LocationViewController.swift in Sources */,
+				FA3499ED1C5D6F1100A9A0C0 /* PostLocationViewController.swift in Sources */,
+				FA3499EB1C5D6F1100A9A0C0 /* MapViewController.swift in Sources */,
+				FA3499E91C5D6F1100A9A0C0 /* LoginTextField.swift in Sources */,
 				FA3499821C56C0E300A9A0C0 /* On_the_map.xcdatamodeld in Sources */,
+				FA3499F31C5D6F1100A9A0C0 /* TableViewController.swift in Sources */,
+				FA3499F11C5D6F1100A9A0C0 /* StudentInformation.swift in Sources */,
+				FA3499F41C5D6F1100A9A0C0 /* User.swift in Sources */,
+				FA3499EA1C5D6F1100A9A0C0 /* LoginViewController.swift in Sources */,
+				FA3499F21C5D6F1100A9A0C0 /* StudentLocation.swift in Sources */,
 				FA34997A1C56C0E300A9A0C0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,14 +213,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		FA34997D1C56C0E300A9A0C0 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FA34997E1C56C0E300A9A0C0 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FA3499851C56C0E300A9A0C0 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -253,6 +311,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "On the map/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "roemmers.com.bo.On-the-map";
@@ -264,6 +323,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "On the map/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "roemmers.com.bo.On-the-map";

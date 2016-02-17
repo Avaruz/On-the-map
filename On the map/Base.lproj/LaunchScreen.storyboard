@@ -1,27 +1,55 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8150" systemVersion="15A204g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8122"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
             <objects>
-                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
-                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController"/>
+                <view contentMode="scaleToFill" id="9B7-EU-kS7">
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <subviews>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright (c) Avaruz 2016" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Ke7-QI-ry3">
+                            <rect key="frame" x="20" y="439" width="441" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="On The Map" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="eFO-h0-sLg">
+                            <rect key="frame" x="20" y="59" width="441" height="43"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="36"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="mml-iy-oEo">
+                            <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="centerX" secondItem="Ke7-QI-ry3" secondAttribute="centerX" id="2IL-8s-P55"/>
+                        <constraint firstAttribute="bottom" secondItem="Ke7-QI-ry3" secondAttribute="bottom" constant="20" id="D1X-DM-CHZ"/>
+                        <constraint firstAttribute="trailing" secondItem="mml-iy-oEo" secondAttribute="trailing" id="JA2-GJ-rd7"/>
+                        <constraint firstItem="mml-iy-oEo" firstAttribute="top" secondItem="9B7-EU-kS7" secondAttribute="top" id="OMc-EP-Wwp"/>
+                        <constraint firstItem="eFO-h0-sLg" firstAttribute="leading" secondItem="9B7-EU-kS7" secondAttribute="leading" constant="20" symbolic="YES" id="TGv-9d-frf"/>
+                        <constraint firstAttribute="bottom" secondItem="mml-iy-oEo" secondAttribute="bottom" id="av4-bc-P6j"/>
+                        <constraint firstItem="eFO-h0-sLg" firstAttribute="centerY" secondItem="9B7-EU-kS7" secondAttribute="bottom" multiplier="1/3" constant="-80" id="cSL-RQ-eOE"/>
+                        <constraint firstItem="Ke7-QI-ry3" firstAttribute="leading" secondItem="9B7-EU-kS7" secondAttribute="leading" constant="20" symbolic="YES" id="csl-iF-YPv"/>
+                        <constraint firstItem="mml-iy-oEo" firstAttribute="leading" secondItem="9B7-EU-kS7" secondAttribute="leading" id="sL3-oq-cM3"/>
+                        <constraint firstAttribute="centerX" secondItem="eFO-h0-sLg" secondAttribute="centerX" id="zMF-6G-cxO"/>
+                    </constraints>
+                </view>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="161" y="273"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="LaunchImage" width="1536" height="2048"/>
+    </resources>
 </document>
