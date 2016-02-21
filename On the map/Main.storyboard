@@ -57,7 +57,7 @@
                     </connections>
                 </barButtonItem>
             </objects>
-            <point key="canvasLocation" x="812" y="-768"/>
+            <point key="canvasLocation" x="484" y="-860"/>
         </scene>
         <!--Post-->
         <scene sceneID="VbH-dH-nEH">
@@ -363,7 +363,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T3S-lU-o9K" customClass="LoginTextField" customModule="On_the_map" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T3S-lU-o9K">
                                 <rect key="frame" x="30" y="329" width="541" height="30"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -373,7 +373,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dDi-xv-F0x" customClass="LoginTextField" customModule="On_the_map" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dDi-xv-F0x">
                                 <rect key="frame" x="30" y="369" width="540" height="30"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -400,12 +400,20 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Boo-vB-7fZ" userLabel="ViewFB">
+                                <rect key="frame" x="29" y="479.5" width="541" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="HUz-tf-HOa"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="Bwv-cP-dIg" secondAttribute="centerY" constant="-10" id="0Ne-h7-35d"/>
                             <constraint firstItem="b1X-13-QkS" firstAttribute="height" secondItem="Jk0-zi-D0n" secondAttribute="height" multiplier="2" id="0uf-f9-65I"/>
                             <constraint firstItem="dDi-xv-F0x" firstAttribute="top" secondItem="T3S-lU-o9K" secondAttribute="bottom" constant="10" id="1Wo-7N-iEj"/>
+                            <constraint firstItem="Boo-vB-7fZ" firstAttribute="top" secondItem="sRa-h8-f3g" secondAttribute="bottom" constant="10" id="6Bj-YK-kqJ"/>
                             <constraint firstAttribute="centerY" secondItem="b1X-13-QkS" secondAttribute="centerY" multiplier="1.75" id="7nn-et-zWV"/>
                             <constraint firstItem="HDH-zt-dqh" firstAttribute="width" secondItem="Jk0-zi-D0n" secondAttribute="width" multiplier="0.9" constant="1" id="BBg-VF-oF0"/>
                             <constraint firstItem="T3S-lU-o9K" firstAttribute="width" secondItem="Jk0-zi-D0n" secondAttribute="width" multiplier="0.9" constant="1" id="Cln-a4-AWj"/>
@@ -413,10 +421,12 @@
                             <constraint firstItem="HDH-zt-dqh" firstAttribute="top" secondItem="dDi-xv-F0x" secondAttribute="bottom" constant="10" id="QIr-qW-xhD"/>
                             <constraint firstItem="sRa-h8-f3g" firstAttribute="top" secondItem="HDH-zt-dqh" secondAttribute="bottom" constant="10" id="SdL-Ge-V3M"/>
                             <constraint firstAttribute="centerX" secondItem="T3S-lU-o9K" secondAttribute="centerX" id="Sej-02-umY"/>
+                            <constraint firstAttribute="centerX" secondItem="Boo-vB-7fZ" secondAttribute="centerX" id="UkH-VO-TkR"/>
                             <constraint firstAttribute="centerX" secondItem="HDH-zt-dqh" secondAttribute="centerX" id="ZWO-YZ-awI"/>
                             <constraint firstAttribute="centerX" secondItem="b1X-13-QkS" secondAttribute="centerX" id="eFO-0D-7av"/>
                             <constraint firstAttribute="centerX" secondItem="sRa-h8-f3g" secondAttribute="centerX" id="kUT-sn-sQ8"/>
                             <constraint firstAttribute="centerX" secondItem="dDi-xv-F0x" secondAttribute="centerX" id="nat-pW-vPj"/>
+                            <constraint firstItem="Boo-vB-7fZ" firstAttribute="width" secondItem="Jk0-zi-D0n" secondAttribute="width" multiplier="0.9" constant="1" id="oVD-0Y-MJk"/>
                             <constraint firstItem="T3S-lU-o9K" firstAttribute="top" secondItem="Bwv-cP-dIg" secondAttribute="top" constant="29" id="pFa-Rh-VuF"/>
                             <constraint firstAttribute="centerX" secondItem="Bwv-cP-dIg" secondAttribute="centerX" id="s4h-dN-wN2"/>
                             <constraint firstItem="dDi-xv-F0x" firstAttribute="width" secondItem="Jk0-zi-D0n" secondAttribute="width" multiplier="0.9" id="wtm-Pl-kvt"/>
@@ -427,12 +437,13 @@
                         <outlet property="loginButton" destination="HDH-zt-dqh" id="iX7-Ff-PbM"/>
                         <outlet property="loginLabel" destination="Bwv-cP-dIg" id="CBK-wA-c9h"/>
                         <outlet property="passwordTextField" destination="dDi-xv-F0x" id="ct3-eX-3eB"/>
+                        <outlet property="viewFB" destination="Boo-vB-7fZ" id="IvG-ag-oIe"/>
                         <segue destination="49e-Tb-3d3" kind="show" identifier="showTabs" id="i0G-bE-oeT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4c8-LE-sJw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-794" y="0.0"/>
+            <point key="canvasLocation" x="-506" y="106"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">

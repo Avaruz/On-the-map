@@ -88,7 +88,7 @@ class StudentLocation {
         request.addValue(StudentLocation.appId, forHTTPHeaderField: "X-Parse-Application-Id")
         request.addValue(StudentLocation.apiKey, forHTTPHeaderField: "X-Parse-REST-API-Key")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        let bodyString = "{\"uniqueKey\": \"\(User.key)\", \"firstName\": \"\(User.firstName)\", \"lastName\": \"\(User.lastName)\",\"mapString\": \"\(mapString)\", \"mediaURL\": \"\(mediaURL)\",\"latitude\": \(latitude), \"longitude\": \(longitude)}"
+        let bodyString = "{\"uniqueKey\": \"\(UdacityClient.key)\", \"firstName\": \"\(UdacityClient.firstName)\", \"lastName\": \"\(UdacityClient.lastName)\",\"mapString\": \"\(mapString)\", \"mediaURL\": \"\(mediaURL)\",\"latitude\": \(latitude), \"longitude\": \(longitude)}"
         request.HTTPBody = bodyString.dataUsingEncoding(NSUTF8StringEncoding)
         let session = NSURLSession.sharedSession()
         let task = session.dataTaskWithRequest(request) { data, response, error in

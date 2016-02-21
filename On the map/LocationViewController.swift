@@ -30,10 +30,14 @@ class LocationViewController: BaseViewController {
     
     @IBAction func didPressLogout(sender: UIBarButtonItem) {
         sender.enabled = false
-        User.logOut() { success in
+        UdacityClient.logOut() { success in
+            if FBSDKAccessToken.currentAccessToken() != nil {
+                let loginManager = FBSDKLoginManager()
+                loginManager.logOut()
+            }
             sender.enabled = true
             if !success {
-                self.showErrorAlert("Logout Failed", defaultMessage: "Could not log out", errors: User.errors)
+                self.showErrorAlert("Logout Failed", defaultMessage: "Could not log out", errors: UdacityClient.errors)
             } else {
                 self.dismissViewControllerAnimated(true, completion: nil)
             }

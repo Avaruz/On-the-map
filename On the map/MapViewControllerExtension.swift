@@ -5,7 +5,6 @@
 //  Created by Adhemar Soria Galvarro on 25/1/16.
 //  Copyright © 2016 Adhemar Soria Galvarro. All rights reserved.
 //
-//  Some ideas from http://www.raywenderlich.com/90971/introduction-mapkit-swift-tutorial
 
 import Foundation
 import MapKit

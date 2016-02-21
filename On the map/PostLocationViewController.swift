@@ -76,8 +76,8 @@ class PostLocationViewController: BaseViewController, MKMapViewDelegate, UITextF
             centerMapOnLocation(geocodedLocation)
             
             let studentInfo = StudentInformation(data: [
-                "firstName": User.firstName,
-                "lastName": User.lastName,
+                "firstName": UdacityClient.firstName,
+                "lastName": UdacityClient.lastName,
                 "latitude": geocodedLocation.coordinate.latitude,
                 "longitude": geocodedLocation.coordinate.longitude,
                 "mediaURL": ""

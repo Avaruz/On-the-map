@@ -8,26 +8,64 @@
 
 import UIKit
 
-class LoginViewController: BaseViewController, UITextFieldDelegate {
+
+class LoginViewController: BaseViewController, UITextFieldDelegate, FBSDKLoginButtonDelegate {
     
-    @IBOutlet weak var emailTextField: LoginTextField!
-    @IBOutlet weak var passwordTextField: LoginTextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginLabel: UILabel!
     @IBOutlet weak var loginButton: UIButton!
     
+    @IBOutlet weak var viewFB: UIView!
+    
     override func viewDidLoad() {
-        emailTextField.delegate = self
-        passwordTextField.delegate = self
-        loginButton.setTitle("Logging in.... Please wait.", forState: .Disabled)
+        loginButton.setTitle("Logging in....", forState: .Disabled)
         loginButton.setTitle("Log in", forState: .Normal)
+        
+        let loginView : FBSDKLoginButton = FBSDKLoginButton()
+        viewFB.addSubview(loginView)
+        let centerLoginX = (viewFB.bounds.width-loginView.bounds.width)/2
+        loginView.center = CGPoint(x: centerLoginX, y: 20)
+        loginView.readPermissions = ["public_profile", "email", "user_friends"]
+        loginView.delegate = self
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        checkIfAlreadyLogin()
+    }
+    
+    func checkIfAlreadyLogin()
+    {
+        if (FBSDKAccessToken.currentAccessToken() != nil && UdacityClient.sessionId == "")
+        {
+            
+            let alertController = UIAlertController(title: "Login", message: "You already was login with FB Credentials as \(UdacityClient.firstName)", preferredStyle: UIAlertControllerStyle.ActionSheet)
+            alertController.addAction(UIAlertAction(title: "Login", style: UIAlertActionStyle.Default)
+                { action -> Void in
+                    self.loginWithFacebook()
+                    alertController.dismissViewControllerAnimated(true, completion: nil)
+                })
+            
+            alertController.addAction(UIAlertAction(title: "LogOut", style: UIAlertActionStyle.Default)
+                { action -> Void in
+                    let loginManager = FBSDKLoginManager()
+                    loginManager.logOut()
+                    alertController.dismissViewControllerAnimated(true, completion: nil)
+                })
+            
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
+
+            
+            
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
         
         super.viewWillAppear(animated)
         subscribeToKeyboardNotifications()
-        
-        // The title was sticking in the "logging in..." state
         loginButton.layoutSubviews()
     }
     
@@ -40,7 +78,7 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
         
         setFormState(true)
         if let username = emailTextField.text, password = passwordTextField.text {
-            User.logIn(username, password: password) { (success, errorMessage) in
+            UdacityClient.logIn(username, password: password) { (success, errorMessage) in
                 self.setFormState(false, errorMessage: errorMessage)
                 if success {
                     self.setFormState(false)
@@ -48,6 +86,44 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
                 }
             }
         }
+    }
+    
+    // Facebook Delegate Methods
+    
+    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
+        print("User Logged In")
+        
+        if ((error) != nil)
+        {
+            // Process error
+        }
+        else if result.isCancelled {
+            // Handle cancellations
+        }
+        else {
+            // If you ask for multiple permissions at once, you
+            // should check if specific permissions missing
+            
+            if (FBSDKAccessToken.currentAccessToken() != nil)
+            {
+                loginWithFacebook()
+            }
+        }
+        
+    }
+    
+    func loginWithFacebook(){
+        UdacityClient.logInWithFacebook(FBSDKAccessToken.currentAccessToken().tokenString) { (success, errorMessage) in
+            self.setFormState(false, errorMessage: errorMessage)
+            if success {
+                self.setFormState(false)
+                self.performSegueWithIdentifier("showTabs", sender: self)
+            }
+        }
+    }
+    
+    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
+        print("User Logged Out")
     }
     
     private func setFormState(loggingIn: Bool, errorMessage: String? = nil) {
@@ -59,7 +135,6 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
         }
     }
 
-    /// Move between fields or hide the keyboard when return is pressed
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if textField == emailTextField {
             passwordTextField.becomeFirstResponder()
@@ -69,7 +144,6 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
         return true
     }
 
-    // MARK: - Keyboard methods
     func subscribeToKeyboardNotifications() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
