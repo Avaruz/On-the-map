@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class PostLocationViewController: BaseViewController, MKMapViewDelegate, UITextFieldDelegate {
+class PostLocationViewController: UIViewController, MKMapViewDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var locationEntryView: UIView!
     @IBOutlet weak var mapContainerView: UIView!

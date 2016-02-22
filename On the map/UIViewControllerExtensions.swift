@@ -1,5 +1,5 @@
 //
-//  BaseViewController.swift
+//  UIViewControllerExtensions.swift
 //  On the Map
 //
 //  Created by Adhemar Soria Galvarro on 25/1/16.
@@ -10,10 +10,10 @@ import UIKit
 import MapKit
 
 /// Share between all controllers
-class BaseViewController: UIViewController {
+extension UIViewController {
 
    
-    internal func showErrorAlert(title: String, defaultMessage: String, errors: [NSError]) {
+    func showErrorAlert(title: String, defaultMessage: String, errors: [NSError]) {
         var message = defaultMessage
         if !errors.isEmpty {
             message = errors[0].localizedDescription

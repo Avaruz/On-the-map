@@ -1,5 +1,5 @@
 //
-//  Location.swift
+//  ParseClient.swift
 //  On the Map
 //
 //  Created by Adhemar Soria Galvarro on 25/1/16.

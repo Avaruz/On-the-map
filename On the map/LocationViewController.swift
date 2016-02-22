@@ -9,7 +9,7 @@
 import UIKit
 
 /// Shared functionality for map and table view
-class LocationViewController: BaseViewController {
+class LocationViewController: UIViewController {
     
     @IBOutlet var pinButtonItem: UIBarButtonItem!
     @IBOutlet var refreshButtonItem: UIBarButtonItem!

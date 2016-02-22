@@ -21,7 +21,7 @@
 		FA3499F31C5D6F1100A9A0C0 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3499E61C5D6F1100A9A0C0 /* TableViewController.swift */; };
 		FA3499F41C5D6F1100A9A0C0 /* UdacityClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3499E71C5D6F1100A9A0C0 /* UdacityClient.swift */; };
 		FA3499F61C5D6F7F00A9A0C0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA3499F51C5D6F7F00A9A0C0 /* MapKit.framework */; };
-		FA3499F81C5D6FD100A9A0C0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3499F71C5D6FD100A9A0C0 /* BaseViewController.swift */; };
+		FA3499F81C5D6FD100A9A0C0 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3499F71C5D6FD100A9A0C0 /* UIViewControllerExtensions.swift */; };
 		FA3499FA1C5D759000A9A0C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA3499F91C5D759000A9A0C0 /* Main.storyboard */; };
 		FA3B0F201C74F6550027E8BE /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA3B0F1F1C74F6550027E8BE /* FBSDKCoreKit.framework */; };
 		FA3B0F221C74F6640027E8BE /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA3B0F211C74F6640027E8BE /* FBSDKLoginKit.framework */; };
@@ -46,7 +46,7 @@
 		FA3499E61C5D6F1100A9A0C0 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		FA3499E71C5D6F1100A9A0C0 /* UdacityClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UdacityClient.swift; sourceTree = "<group>"; };
 		FA3499F51C5D6F7F00A9A0C0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		FA3499F71C5D6FD100A9A0C0 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		FA3499F71C5D6FD100A9A0C0 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		FA3499F91C5D759000A9A0C0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		FA3B0F1F1C74F6550027E8BE /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		FA3B0F211C74F6640027E8BE /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
@@ -106,7 +106,7 @@
 		FA3499A81C5D6AE400A9A0C0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FA3499F71C5D6FD100A9A0C0 /* BaseViewController.swift */,
+				FA3499F71C5D6FD100A9A0C0 /* UIViewControllerExtensions.swift */,
 				FA3499DB1C5D6F1100A9A0C0 /* LocationViewController.swift */,
 				FA3499DD1C5D6F1100A9A0C0 /* LoginViewController.swift */,
 				FA3499DE1C5D6F1100A9A0C0 /* MapViewController.swift */,
@@ -217,7 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA3499F81C5D6FD100A9A0C0 /* BaseViewController.swift in Sources */,
+				FA3499F81C5D6FD100A9A0C0 /* UIViewControllerExtensions.swift in Sources */,
 				FA3499EC1C5D6F1100A9A0C0 /* MapViewControllerExtension.swift in Sources */,
 				FA3499E81C5D6F1100A9A0C0 /* LocationViewController.swift in Sources */,
 				FA3499ED1C5D6F1100A9A0C0 /* PostLocationViewController.swift in Sources */,
