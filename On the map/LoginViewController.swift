@@ -37,10 +37,10 @@ class LoginViewController: BaseViewController, UITextFieldDelegate, FBSDKLoginBu
     
     func checkIfAlreadyLogin()
     {
-        if (FBSDKAccessToken.currentAccessToken() != nil && UdacityClient.sessionId == "")
+        if (FBSDKAccessToken.currentAccessToken() != nil && UdacityClient.sharedInstance.sessionId == "")
         {
             
-            let alertController = UIAlertController(title: "Login", message: "You already was login with FB Credentials as \(UdacityClient.firstName)", preferredStyle: UIAlertControllerStyle.ActionSheet)
+            let alertController = UIAlertController(title: "Login", message: "You already was login with FB Credentials as \(UdacityClient.sharedInstance.firstName)", preferredStyle: UIAlertControllerStyle.ActionSheet)
             alertController.addAction(UIAlertAction(title: "Login", style: UIAlertActionStyle.Default)
                 { action -> Void in
                     self.loginWithFacebook()
@@ -78,7 +78,7 @@ class LoginViewController: BaseViewController, UITextFieldDelegate, FBSDKLoginBu
         
         setFormState(true)
         if let username = emailTextField.text, password = passwordTextField.text {
-            UdacityClient.logIn(username, password: password) { (success, errorMessage) in
+            UdacityClient.sharedInstance.logIn(username, password: password) { (success, errorMessage) in
                 self.setFormState(false, errorMessage: errorMessage)
                 if success {
                     self.setFormState(false)
@@ -113,7 +113,7 @@ class LoginViewController: BaseViewController, UITextFieldDelegate, FBSDKLoginBu
     }
     
     func loginWithFacebook(){
-        UdacityClient.logInWithFacebook(FBSDKAccessToken.currentAccessToken().tokenString) { (success, errorMessage) in
+        UdacityClient.sharedInstance.logInWithFacebook(FBSDKAccessToken.currentAccessToken().tokenString) { (success, errorMessage) in
             self.setFormState(false, errorMessage: errorMessage)
             if success {
                 self.setFormState(false)

@@ -30,14 +30,14 @@ class LocationViewController: BaseViewController {
     
     @IBAction func didPressLogout(sender: UIBarButtonItem) {
         sender.enabled = false
-        UdacityClient.logOut() { success in
+        UdacityClient.sharedInstance.logOut() { success in
             if FBSDKAccessToken.currentAccessToken() != nil {
                 let loginManager = FBSDKLoginManager()
                 loginManager.logOut()
             }
             sender.enabled = true
             if !success {
-                self.showErrorAlert("Logout Failed", defaultMessage: "Could not log out", errors: UdacityClient.errors)
+                self.showErrorAlert("Logout Failed", defaultMessage: "Could not log out", errors: UdacityClient.sharedInstance.errors)
             } else {
                 self.dismissViewControllerAnimated(true, completion: nil)
             }
@@ -54,10 +54,10 @@ class LocationViewController: BaseViewController {
     - parameter forceRefresh: Force the data to be retrieved over the network
     */
     internal func loadLocationData(forceRefresh: Bool = false, didComplete: (() -> Void)?) {
-         StudentLocation.getRecent(forceRefresh) { success in
+         ParseClient.sharedInstance.getRecent(forceRefresh) { success in
             if !success {
-                self.showErrorAlert("Error Loading Locations", defaultMessage: "Loading failed.", errors: StudentLocation.errors)
-            } else if !StudentLocation.locations.isEmpty && didComplete != nil {
+                self.showErrorAlert("Error Loading Locations", defaultMessage: "Loading failed.", errors: ParseClient.sharedInstance.errors)
+            } else if !ParseClient.sharedInstance.locations.isEmpty && didComplete != nil {
                 didComplete!()
             }
         }       

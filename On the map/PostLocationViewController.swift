@@ -76,13 +76,14 @@ class PostLocationViewController: BaseViewController, MKMapViewDelegate, UITextF
             centerMapOnLocation(geocodedLocation)
             
             let studentInfo = StudentInformation(data: [
-                "firstName": UdacityClient.firstName,
-                "lastName": UdacityClient.lastName,
+                "firstName": UdacityClient.sharedInstance.firstName,
+                "lastName": UdacityClient.sharedInstance.lastName,
                 "latitude": geocodedLocation.coordinate.latitude,
                 "longitude": geocodedLocation.coordinate.longitude,
                 "mediaURL": ""
                 ])
-            mapView.addAnnotation(studentInfo)
+            
+            mapView.addAnnotation(studentInfo.toMKAnnotation())
             
             // save for use during submit
             mapString = locationTextField.text!
@@ -104,7 +105,7 @@ class PostLocationViewController: BaseViewController, MKMapViewDelegate, UITextF
     
     
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
-        if let annotation = annotation as? StudentInformation {
+        if let annotation = annotation as? MapPin {
             let identifier = "pin"
             var view: MKPinAnnotationView
             if let dequeuedView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier) as? MKPinAnnotationView {
@@ -112,19 +113,23 @@ class PostLocationViewController: BaseViewController, MKMapViewDelegate, UITextF
                 view = dequeuedView
             } else {
                 view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-                view.canShowCallout = false
+                view.canShowCallout = true
+                view.calloutOffset = CGPoint(x: -5, y: 5)
             }
             return view
         }
         return nil
     }
     
-    
     @IBAction func didPressSubmit(sender: UIButton) {
         if !urlTextField.text!.isEmpty && location != nil {
             let coord = location!.coordinate
             let text = urlTextField.text
-            StudentLocation.postNewLocation(coord.latitude, longitude: coord.longitude, mediaURL: text!, mapString: mapString) { success in
+            ParseClient.sharedInstance.postNewLocation(coord.latitude, longitude: coord.longitude, mediaURL: text!, mapString: mapString) { success in
+                //Get error if can't post...
+                if !success {
+                    self.showErrorAlert("Error PostLocation", defaultMessage: "An error was ocurred when you try to post a new location", errors: ParseClient.sharedInstance.errors)
+                }
                 self.dismissViewControllerAnimated(true, completion: nil)
             }
         }

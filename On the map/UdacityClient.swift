@@ -10,21 +10,30 @@ import Foundation
 
 class UdacityClient {
     /// username of the logged in user
-    static var username = ""
+    var username = ""
     
     /// key for the logged in user
-    static var key = ""
+    var key = ""
     
     /// session id for the logged in user
-    static var sessionId = ""
+    var sessionId = ""
     
     /// Set to false when all user data is finished loading
-    static var loading = true
+    var loading = true
     
-    static var firstName = ""
-    static var lastName = ""
+    var firstName = ""
+    var lastName = ""
     
-    static var errors: [NSError] = []
+    var errors: [NSError] = []
+    
+    //Singleton
+    
+    static let sharedInstance = UdacityClient()
+    
+    private init()
+    {
+        print(__FUNCTION__)
+    }
     
     /**
     Make a login request to the Udacity server
@@ -33,7 +42,7 @@ class UdacityClient {
     - parameter password: The password
     - parameter didComplete: The callback function when request competes
     */
-    class func logIn(username: String, password: String, didComplete: (success: Bool, errorMessage: String?) -> Void) {
+    func logIn(username: String, password: String, didComplete: (success: Bool, errorMessage: String?) -> Void) {
         let request = NSMutableURLRequest(URL: NSURL(string: "https://www.udacity.com/api/session")!)
         request.HTTPMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Accept")
@@ -49,14 +58,14 @@ class UdacityClient {
                 return
             }
             let newData = data!.subdataWithRange(NSMakeRange(5, data!.length - 5)) /* subset response data! */
-            let success = UdacityClient.parseUserData(newData)
+            let success = self.parseUserData(newData)
             let errorMessage: String? = success ? nil : "The email or password was not valid."
             didComplete(success: success, errorMessage: errorMessage)
         }
         task.resume()
     }
     
-    class func logInWithFacebook(token: String, didComplete: (success: Bool, errorMessage: String?) -> Void){
+    func logInWithFacebook(token: String, didComplete: (success: Bool, errorMessage: String?) -> Void){
         let request = NSMutableURLRequest(URL: NSURL(string: "https://www.udacity.com/api/session")!)
         request.HTTPMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Accept")
@@ -71,7 +80,7 @@ class UdacityClient {
                 return
             }
             let newData = data!.subdataWithRange(NSMakeRange(5, data!.length - 5)) /* subset response data! */
-            let success = UdacityClient.parseUserData(newData)
+            let success = self.parseUserData(newData)
             let errorMessage: String? = success ? nil : "The username or password was not valid."
             didComplete(success: success, errorMessage: errorMessage)
         }
@@ -84,15 +93,15 @@ class UdacityClient {
     - parameter data: The data from the login request
     - returns: True if everything went well. False otherwise.
     */
-    class func parseUserData(data: NSData) -> Bool {
+    func parseUserData(data: NSData) -> Bool {
         var success = true;
         if let userData = (try? NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers)) as? NSDictionary,
             let account = userData["account"] as? [String: AnyObject],
             let session = userData["session"] as? [String: String]
         {
-            UdacityClient.key = account["key"] as! String
-            UdacityClient.sessionId = session["id"]!
-            UdacityClient.getUserDetail() { success in
+            self.key = account["key"] as! String
+            self.sessionId = session["id"]!
+            self.getUserDetail() { success in
                 if success {
                     self.loading = false
                 }
@@ -103,8 +112,8 @@ class UdacityClient {
         return success;
     }
     
-    class func getUserDetail(didComplete: (success: Bool) -> Void) {
-        let request = NSMutableURLRequest(URL: NSURL(string: "https://www.udacity.com/api/users/\(UdacityClient.key)")!)
+    func getUserDetail(didComplete: (success: Bool) -> Void) {
+        let request = NSMutableURLRequest(URL: NSURL(string: "https://www.udacity.com/api/users/\(self.key)")!)
         let session = NSURLSession.sharedSession()
         let task = session.dataTaskWithRequest(request) { data, response, error in
             if error != nil { // Handle error...
@@ -126,7 +135,7 @@ class UdacityClient {
         task.resume()
     }
     
-    class func logOut(didComplete: (success: Bool) -> Void) {
+    func logOut(didComplete: (success: Bool) -> Void) {
         let request = NSMutableURLRequest(URL: NSURL(string: "https://www.udacity.com/api/session")!)
         request.HTTPMethod = "DELETE"
         var xsrfCookie: NSHTTPCookie? = nil

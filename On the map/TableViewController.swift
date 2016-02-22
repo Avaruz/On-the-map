@@ -30,8 +30,8 @@ class TableViewController: LocationViewController, UITableViewDataSource, UITabl
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("tableCell") as UITableViewCell!
-        if  StudentLocation.locations.count > indexPath.row {
-            let studentInfo = StudentLocation.locations[indexPath.row]
+        if  ParseClient.sharedInstance.locations.count > indexPath.row {
+            let studentInfo = ParseClient.sharedInstance.locations[indexPath.row]
             cell.textLabel!.text = studentInfo.title
             cell.imageView!.image = UIImage(named: "pin")
         }
@@ -39,12 +39,12 @@ class TableViewController: LocationViewController, UITableViewDataSource, UITabl
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return StudentLocation.locations.count
+        return ParseClient.sharedInstance.locations.count
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if  StudentLocation.locations.count > indexPath.row {
-            let studentInfo = StudentLocation.locations[indexPath.row]
+        if  ParseClient.sharedInstance.locations.count > indexPath.row {
+            let studentInfo = ParseClient.sharedInstance.locations[indexPath.row]
             if let url = NSURL(string: studentInfo.mediaURL) {
                 UIApplication.sharedApplication().openURL(url)
             }

@@ -28,17 +28,19 @@ class MapViewController: LocationViewController, MKMapViewDelegate {
     }
     
     func didRefreshLocationData() {
-        self.mapView.removeAnnotations(StudentLocation.locations)
+        for location in ParseClient.sharedInstance.locations{
+            self.mapView.removeAnnotation(location.toMKAnnotation())
+        }
         self.loadAnnotations()
     }
    
 
     func loadAnnotations() {
-        let coord = StudentLocation.locations[0].coordinate
+        let coord = ParseClient.sharedInstance.locations[0].coordinate
         let initialLocation = CLLocation(latitude: coord.latitude, longitude: coord.longitude)
         centerMapOnLocation(initialLocation)
-        for location in StudentLocation.locations {
-            mapView.addAnnotation(location)
+        for location in ParseClient.sharedInstance.locations {
+            mapView.addAnnotation(location.toMKAnnotation())
         }                  
     }
     

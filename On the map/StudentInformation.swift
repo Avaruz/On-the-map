@@ -9,7 +9,8 @@
 import Foundation
 import MapKit
 
-class StudentInformation: NSObject, MKAnnotation {
+
+struct StudentInformation {
     var coordinate: CLLocationCoordinate2D
     var firstName: String
     var lastName: String
@@ -31,7 +32,11 @@ class StudentInformation: NSObject, MKAnnotation {
         subtitle = mediaURL
     }
     
-    class func isDataValid(data: NSDictionary) -> Bool {
+    func toMKAnnotation()-> MapPin {
+        return MapPin(coordinate: self.coordinate, title: self.title!, subtitle:self.subtitle!)
+    }
+    
+    static func isDataValid(data: NSDictionary) -> Bool {
         if let _ = data["latitude"] as? Double,
             let _ = data["longitude"] as? Double,
             let _ = data["firstName"] as? String,
