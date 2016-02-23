@@ -27,6 +27,7 @@
 		FA3B0F221C74F6640027E8BE /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA3B0F211C74F6640027E8BE /* FBSDKLoginKit.framework */; };
 		FA3B0F241C760E300027E8BE /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA3B0F231C760E300027E8BE /* Bolts.framework */; };
 		FAD5982F1C7AAEA40020DB1E /* MapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD5982E1C7AAEA40020DB1E /* MapPin.swift */; };
+		FADEEBFF1C7C90FA00229448 /* StudentsLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADEEBFE1C7C90FA00229448 /* StudentsLocations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		FA3B0F231C760E300027E8BE /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		FA3B0F271C7611CF0027E8BE /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		FAD5982E1C7AAEA40020DB1E /* MapPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapPin.swift; sourceTree = "<group>"; };
+		FADEEBFE1C7C90FA00229448 /* StudentsLocations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentsLocations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				FA3499E51C5D6F1100A9A0C0 /* ParseClient.swift */,
 				FA3499E71C5D6F1100A9A0C0 /* UdacityClient.swift */,
 				FAD5982E1C7AAEA40020DB1E /* MapPin.swift */,
+				FADEEBFE1C7C90FA00229448 /* StudentsLocations.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				FA3499EC1C5D6F1100A9A0C0 /* MapViewControllerExtension.swift in Sources */,
 				FA3499E81C5D6F1100A9A0C0 /* LocationViewController.swift in Sources */,
 				FA3499ED1C5D6F1100A9A0C0 /* PostLocationViewController.swift in Sources */,
+				FADEEBFF1C7C90FA00229448 /* StudentsLocations.swift in Sources */,
 				FA3499EB1C5D6F1100A9A0C0 /* MapViewController.swift in Sources */,
 				FA3499821C56C0E300A9A0C0 /* On_the_map.xcdatamodeld in Sources */,
 				FA3499F31C5D6F1100A9A0C0 /* TableViewController.swift in Sources */,

@@ -28,7 +28,7 @@ class MapViewController: LocationViewController, MKMapViewDelegate {
     }
     
     func didRefreshLocationData() {
-        for location in ParseClient.sharedInstance.locations{
+        for location in StudentsLocations.sharedInstance.locations{
             self.mapView.removeAnnotation(location.toMKAnnotation())
         }
         self.loadAnnotations()
@@ -36,10 +36,10 @@ class MapViewController: LocationViewController, MKMapViewDelegate {
    
 
     func loadAnnotations() {
-        let coord = ParseClient.sharedInstance.locations[0].coordinate
+        let coord = StudentsLocations.sharedInstance.locations[0].coordinate
         let initialLocation = CLLocation(latitude: coord.latitude, longitude: coord.longitude)
         centerMapOnLocation(initialLocation)
-        for location in ParseClient.sharedInstance.locations {
+        for location in StudentsLocations.sharedInstance.locations {
             mapView.addAnnotation(location.toMKAnnotation())
         }                  
     }

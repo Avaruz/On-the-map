@@ -13,7 +13,7 @@ class ParseClient {
     let appId = "QrX47CA9cyuGewLdsL7o5Eb8iug6Em8ye0dnAbIr"
     let apiKey = "QuWThTdiRmTux3YaDseUSEpUKo7aBYM737yKd4gY"
     
-    var locations: [StudentInformation] = []
+
     var errors: [NSError] = []
     
     //Singleton
@@ -32,8 +32,8 @@ class ParseClient {
     - parameter didComplete: Callback when loading is complete
     */
     func getRecent(forceRefresh: Bool = false, didComplete: (success: Bool) -> Void) {
-        if forceRefresh || self.locations.isEmpty {
-            self.locations = []
+        if forceRefresh ||  StudentsLocations.sharedInstance.locations.isEmpty {
+            StudentsLocations.sharedInstance.locations = []
             let request = NSMutableURLRequest(URL: NSURL(string: "https://api.parse.com/1/classes/StudentLocation?limit=100&order=-updatedAt")!)
             request.addValue(appId, forHTTPHeaderField: "X-Parse-Application-Id")
             request.addValue(apiKey, forHTTPHeaderField: "X-Parse-REST-API-Key")
@@ -49,7 +49,7 @@ class ParseClient {
             }
             task.resume()
         }
-        else if !locations.isEmpty {
+        else if !StudentsLocations.sharedInstance.locations.isEmpty {
             didComplete(success: true)
         }
     }
@@ -70,7 +70,7 @@ class ParseClient {
                         success = false
                         break
                     }
-                    ParseClient.sharedInstance.locations.append(StudentInformation(data: studentInfo))
+                    StudentsLocations.sharedInstance.locations.append(StudentInformation(data: studentInfo))
                 }
             }
         }

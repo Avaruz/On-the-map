@@ -57,7 +57,7 @@ class LocationViewController: UIViewController {
          ParseClient.sharedInstance.getRecent(forceRefresh) { success in
             if !success {
                 self.showErrorAlert("Error Loading Locations", defaultMessage: "Loading failed.", errors: ParseClient.sharedInstance.errors)
-            } else if !ParseClient.sharedInstance.locations.isEmpty && didComplete != nil {
+            } else if !StudentsLocations.sharedInstance.locations.isEmpty && didComplete != nil {
                 didComplete!()
             }
         }       
